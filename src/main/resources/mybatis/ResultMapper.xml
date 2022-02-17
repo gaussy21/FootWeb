@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zdrv.mapper.ResultMapper">
+	
+	<insert id="insert" parameterType="com.zdrv.domain.Result">
+		insert into result (home, away, home_score, away_score, date) 
+		values (#{homeTeam}, #{awayTeam}, #{homeScore}, #{awayScore}, #{date})
+	</insert>
+	
+	<select id="selectById" resultType="com.zdrv.domain.Result"
+		parameterType="int">
+		select
+  			result.id,
+  			home.team as home, away.team as away,
+  			home_score, away_score,
+  			date
+		from result
+		join teams as home
+		on result.home = home.id
+		join teams as away
+		on result.away = away.id
+		where result.id #{id}
+	</select>
+	
+	<delete id="delete" parameterType="int">
+		delete from result where result.id = #{id}
+	</delete>
+	
+	<update id="edit" parameterType="com.zdrv.domain.Result">
+		update result set 
+			home = #{homeTeam},
+			away = #{awayTeam},
+			home_score = #{homeScore},
+			away_score = #{awayScore},
+			date = #{date}
+		where result.id = #{id}
+	</update>
+	
+	
+	
+</mapper>

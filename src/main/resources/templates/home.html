@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+
+<style>
+</style>
+<body>
+	<ul class="nav nav-tabs">
+		<li class="nav-item">
+			<a class="nav-link active" th:href="@{/home}">Home</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" th:href="@{/game}">試合結果</a>
+		</li>
+		<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle"
+				data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+				aria-expanded="false">順位表</a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" th:href="@{/rank}">プレミアリーグ</a>
+				<a class="dropdown-item" th:href="@{/rank}">リーガエスパニョーラ</a>
+				<a class="dropdown-item" th:href="@{/rank}">セリエＡ</a>
+				<a class="dropdown-item" th:href="@{/rank}">ブンデスリーガ</a>
+			</div>
+		</li>
+	</ul>
+
+	<h1 class="text-center mt-4">スコア編集</h1>
+
+	<div class="container">
+		<form action="" method="post">
+			<div class="row">
+				<div class="col-12 top1">
+					<p class="text-center mt-2">チーム名入力</p>
+				</div>
+				<select class="col-2 offset-4" name="" id="">
+					<option value="0">ホームチーム</option>
+					<option value="1">マンチェスターC</option>
+					<option value="2">リバプール</option>
+					<option value="3">チェルシー</option>
+					<option value="4">ウェストハム</option>
+					
+				</select>
+				<div>
+					<p class="col-1">vs</p>
+				</div>
+				<select class="col-2" name="" id="">
+					<option value="0">アウェイチーム</option>
+					<option value="1">マンチェスターU</option>
+					<option value="2">トッテナム</option>
+					<option value="3">レスター</option>
+					<option value="4">アーセナル</option>
+				</select>
+			</div><!-- /.row -->
+			<div class="row">
+				<div class="col-12 top1">
+					<p class="text-center mt-3">スコア入力</p>
+				</div>
+				<input class="col-2 offset-4" type="number" min="0" step="1" placeholder="スコア" />
+				<div>
+					<p class="col-1">-</p>
+				</div>
+				<input class="col-2" type="number" min="0" step="1" placeholder="スコア" />
+			</div><!-- /.row -->
+			
+			<div class="row mt-4">
+				<input type="date" class="offset-5" />
+			</div>
+			
+			<input class="col-2 offset-5 mt-5" type="submit" value="決定" />
+		</form>
+	</div><!-- /.container -->
+
+	<script src="/js/jquery-3.6.0.min.js"></script>
+	<script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
