@@ -79,7 +79,7 @@
 	</div>
 
 	<div class="col-8 offset-2">
-		<table class="table table-bordered">
+		<table class="table table-bordered" th:object="${ranking}">
 			<thead>
 				<tr>
 					<th scope="col">順位</th>
@@ -95,65 +95,17 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class="table-success">
-					<th scope="row">1</th>
-					<td><a href="">マンチェスターC</a></td>
-					<td>25</td>
-					<td>20</td>
-					<td>3</td>
-					<td>2</td>
-					<td>61</td>
-					<td>14</td>
-					<td>+47</td>
-					<td>63</td>
-				</tr>
-				<tr class="table-success">
-					<th scope="row">2</th>
-					<td>リバプール</td>
-					<td>23</td>
-					<td>15</td>
-					<td>6</td>
-					<td>2</td>
-					<td>60</td>
-					<td>19</td>
-					<td>+41</td>
-					<td>51</td>
-				</tr>
-				<tr class="table-success">
-					<th scope="row">3</th>
-					<td>チェルシー</td>
-					<td>24</td>
-					<td>13</td>
-					<td>8</td>
-					<td>3</td>
-					<td>48</td>
-					<td>18</td>
-					<td>+30</td>
-					<td>47</td>
-				</tr>
-				<tr class="table-success">
-					<th scope="row">4</th>
-					<td>ウェストハム</td>
-					<td>24</td>
-					<td>12</td>
-					<td>4</td>
-					<td>8</td>
-					<td>42</td>
-					<td>31</td>
-					<td>+9</td>
-					<td>39</td>
-				</tr>
-				<tr class="table-primary">
-					<th scope="row">5</th>
-					<td>マンチェスターU</td>
-					<td>24</td>
-					<td>11</td>
-					<td>7</td>
-					<td>6</td>
-					<td>38</td>
-					<td>32</td>
-					<td>+6</td>
-					<td>40</td>
+				<tr th:each="rank, vs : ${ranks}" class="table-success">
+					<th scope="row" th:text="${vs.count}"></th>
+					<td th:text="${rank.name}"></td>
+					<td th:text="${rank.game}"></td>
+					<td th:text="${rank.win}"></td>
+					<td th:text="${rank.draw}"></td>
+					<td th:text="${rank.lose}"></td>
+					<td th:text="${rank.plus}"></td>
+					<td th:text="${rank.minus}"></td>
+					<td th:text="${rank.diff}"></td>
+					<td th:text="${rank.point}"></td>
 				</tr>
 			</tbody>
 		</table>
@@ -166,6 +118,10 @@
 	<div class="clel offset-2">
 		<button type="button" class="btn btn-primary btn-sm"></button>
 		ヨーロッパリーグ
+	</div>
+	<div class="clel offset-2">
+		<button type="button" class="btn btn-danger btn-sm"></button>
+		降格
 	</div>
 
 

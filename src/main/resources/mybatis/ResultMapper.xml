@@ -11,7 +11,7 @@
 		parameterType="int">
 		select
   			result.id,
-  			home.team as home, away.team as away,
+  			home.name as home, away.name as away,
   			home_score, away_score,
   			date
 		from result
@@ -36,6 +36,18 @@
 		where result.id = #{id}
 	</update>
 	
+	<select id="selectAll" resultType="com.zdrv.domain.Result">
+		select
+  			result.id,
+  			home.name as home, away.name as away,
+  			home_score, away_score,
+  			date
+			from result
+			join teams as home
+			on result.home = home.id
+			join teams as away
+			on result.away = away.id; 
+	</select>
 	
 	
 </mapper>

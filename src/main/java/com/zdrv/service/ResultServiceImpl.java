@@ -1,13 +1,19 @@
 package com.zdrv.service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.zdrv.domain.Ranking;
 import com.zdrv.domain.Result;
 import com.zdrv.mapper.RankingMapper;
 import com.zdrv.mapper.ResultMapper;
 
+@Service
+@Transactional
 public class ResultServiceImpl implements ResultService {
 
 	@Autowired
@@ -18,9 +24,9 @@ public class ResultServiceImpl implements ResultService {
 	
 	
 	@Override
-	public Result getResultById(int id) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+	public Result getResultById(Integer id) {
+		// 1試合分の結果を取得
+		return resultMapper.selectById(id);
 	}
 
 	@Override
@@ -92,7 +98,7 @@ public class ResultServiceImpl implements ResultService {
 	}
 
 	@Override
-	public void deleteResult(int id) {
+	public void deleteResult(Integer id) {
 		// TODO 自動生成されたメソッド・スタブ
 		
 	}
@@ -101,6 +107,12 @@ public class ResultServiceImpl implements ResultService {
 	public void editResult(Result result) {
 		// TODO 自動生成されたメソッド・スタブ
 		
+	}
+
+	@Override
+	public List<Result> getAllTeams() {
+		// 全試合を取得
+		return resultMapper.selectAll();
 	}
 
 }
