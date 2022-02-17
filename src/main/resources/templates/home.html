@@ -8,6 +8,9 @@
 </head>
 
 <style>
+	.form {
+		text-align: center;
+	}
 </style>
 <body>
 	<ul class="nav nav-tabs">
@@ -33,7 +36,7 @@
 	<h1 class="text-center mt-4">スコア編集</h1>
 
 	<div class="container">
-		<form action="" method="post">
+		<form class="form" action="" method="post">
 			<div class="row">
 				<div class="col-12 top1">
 					<p class="text-center mt-2">チーム名入力</p>
@@ -61,18 +64,18 @@
 				<div class="col-12 top1">
 					<p class="text-center mt-3">スコア入力</p>
 				</div>
-				<input class="col-2 offset-4" type="number" min="0" step="1" placeholder="スコア" />
+				<input class="col-1 offset-5" type="number" min="0" step="1" value="0"/>
 				<div>
 					<p class="col-1">-</p>
 				</div>
-				<input class="col-2" type="number" min="0" step="1" placeholder="スコア" />
+				<input class="col-1" type="number" min="0" step="1" value="0"/>
 			</div><!-- /.row -->
 			
 			<div class="row mt-4">
 				<input type="date" class="offset-5" />
 			</div>
 			
-			<input class="col-2 offset-5 mt-5" type="submit" value="決定" />
+			<input class="col-2 mt-5" type="submit" value="決定" />
 		</form>
 	</div><!-- /.container -->
 
