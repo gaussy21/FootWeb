@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移籍情報</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<style>
+    .p-3 {
+        background-color: lightblue;
+        height: 300px;
+    }
+
+    .trade {
+        text-align: center;
+    }
+    .outer, .col-12 {
+        position: relative;
+    }
+    .inner, .btn-success {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .innertrade1 {
+        text-align: center;
+        margin-top: 2px;
+        margin-bottom: 3px;
+    }
+    .innertrade2 {
+        text-align: center;
+        transform: translateY(+30%);
+    }
+    .innertrade3 {
+        text-align: center;
+        transform: translateY(+90%);
+    }
+    .innertrade4 {
+        text-align: center;
+        transform: translateY(+150%)
+    }
+    .innertrade5 {
+        text-align: center;
+        transform: translateY(+150%);
+    }
+
+    .arrow {
+        position: absolute;
+        left: 50%;
+        transform: translateY(-5%) translateX(-50%);
+        margin: 2px;
+    }
+    .club {
+        width: 40px;
+        transform: translateX(-30%);
+    }
+  
+    .club2 {
+        width: 50px;
+        transform: translateX(-20%);
+    }
+    .club1 {
+        width: 30px;
+        transform: translateX(-20%);
+    }
+    h1 {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+</style>
+<body>
+    <h1 class="trade">移籍情報</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 shadow p-3 mb-5 rounded bg-body outer">
+                <h4 class="innertrade1">P-E オーバメヤン</h4>
+                <div class="innertrade2"><p><img class="club" src="/images/foot/gunners.png">アーセナル</p></div>
+                <button type="button"class="arrow btn btn-success btn-sm">⬇︎</button>
+                <div class="innertrade3"><p><img class="club" src="/images/foot/barca.png">バルセロナ</p></div>
+                <div class="innertrade4"><p>自由移籍</p></div>
+                <div class="innertrade5"><p>契約期間 2022年2月 - 2025年6月</p></div>
+            </div>
+
+            <div class="col-12 shadow p-3 mb-5 rounded bg-body outer">
+                <h4 class="innertrade1">R ベンタンクール</h4>
+                <div class="innertrade2"><p><img class="club1" src="/images/foot/Juventus_Logo.png">ユベントス</p></div>
+                <button type="button" class="arrow btn btn-success btn-sm">⬇︎</button>
+                <div class="innertrade3"><p><img class="club2" src="/images/foot/spurs.png">トッテナム</p></div>
+                <div class="innertrade4"><p>移籍金 2097万＄</p></div>
+                <div class="innertrade5"><p>契約期間 2022年1月 - 2026年6月</p></div>
+            </div>
+        </div>   
+    </div>
+
+    <div class="outer">
+        <div class="inner"><a class="btn btn-primary btn-active-box-shadow" role="button" href="home">ホームへ</a></div>
+    </div>
+    
+    <script src="/js/jquery-3.6.0.min.js"></script>
+  	<script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

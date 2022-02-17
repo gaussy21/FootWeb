@@ -46,13 +46,12 @@ public class ResultServiceImpl implements ResultService {
 			rank1.setPoint(0);
 		}
 		else {
-			//引き分け
 			rank1.setWin(0);
 			rank1.setDraw(1);
 			rank1.setLose(0);
 			rank1.setPoint(1);
 		}
-		//得点と失点
+		
 		rank1.setPlus(result.getHomeScore());
 		rank1.setMinus(result.getAwayScore());
 		
@@ -61,30 +60,6 @@ public class ResultServiceImpl implements ResultService {
 		// アウェイチーム
 		Ranking rank2 = new Ranking();
 		rank2.setTeamId(result.getAwayTeamId());
-		if(result.getAwayScore() > result.getHomeScore()) {
-			//勝ち
-			rank2.setWin(1);
-			rank2.setDraw(0);
-			rank2.setLose(0);
-			rank2.setPoint(3);
-		}
-		else if(result.getAwayScore() < result.getHomeScore()) {
-			//負け
-			rank2.setWin(0);
-			rank2.setDraw(0);
-			rank2.setLose(1);
-			rank2.setPoint(0);
-		}
-		else {
-			//引き分け
-			rank2.setWin(0);
-			rank2.setDraw(1);
-			rank2.setLose(0);
-			rank2.setPoint(1);
-		}
-		//得点と失点
-		rank2.setPlus(result.getAwayScore());
-		rank2.setMinus(result.getHomeScore());
 		
 		// rankingテーブルを更新
 		rankingMapper.update(rank1);

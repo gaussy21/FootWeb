@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>得点ランキング</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<style>
+#logo-pl {
+	width: 13%;
+	height: 13%;
+}
+
+.dropdown {
+	display: inline-block;
+}
+
+.outer {
+	position: relative;
+}
+
+.inner {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+}
+</style>
+</head>
+
+<body>
+	<h1>得点ランキング</h1>
+	<img src="/images/foot/pl_logo.png" id="logo-pl">
+	<div class="dropdown">
+		<button class="btn btn-secondary dropdown-toggle" type="button"
+			id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+			aria-expanded="false">プレミアリーグ</button>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			<a class="dropdown-item" href="#">リーガエスパニョーラ</a> <a
+				class="dropdown-item" href="#">セリエＡ</a> <a class="dropdown-item"
+				href="#">ブンデスリーガ</a>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-6">
+				<div class="card-header">得点ランキング</div>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th scope="col">順位</th>
+							<th scope="col">チーム</th>
+							<th scope="col">選手</th>
+							<th scope="col">ゴール</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td><a>リバプール</a></td>
+							<td>M サラー</td>
+							<td>16</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>リバプール</td>
+							<td>D ジョタ</td>
+							<td>12</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>マンチェスターC</td>
+							<td>R スターリング</td>
+							<td>10</td>
+						</tr>
+						<tr>
+							<th scope="row">4</th>
+							<td>レスター</td>
+							<td>J バーディー</td>
+							<td>9</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-6">
+				<div class="card-header">アシストランキング</div>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th scope="col">順位</th>
+							<th scope="col">チーム</th>
+							<th scope="col">選手</th>
+							<th scope="col">アシスト</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td><a>リバプール</a></td>
+							<td>M サラー</td>
+							<td>16</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>リバプール</td>
+							<td>D ジョタ</td>
+							<td>12</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>マンチェスターC</td>
+							<td>R スターリング</td>
+							<td>10</td>
+						</tr>
+						<tr>
+							<th scope="row">4</th>
+							<td>レスター</td>
+							<td>J バーディー</td>
+							<td>9</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="outer">
+		<div class="inner">
+			<a class="btn btn-primary btn-active-box-shadow" role="button"
+				href="home">ホームへ</a>
+		</div>
+	</div>
+
+	<script src="/js/jquery-3.6.0.min.js"></script>
+	<script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
