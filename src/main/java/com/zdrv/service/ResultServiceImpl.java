@@ -112,6 +112,7 @@ public class ResultServiceImpl implements ResultService {
 	@Override
 	public List<Result> getAllTeams() {
 		// 全試合を取得
+		
 		return resultMapper.selectAll();
 	}
 

@@ -24,7 +24,7 @@
 }
 </style>
 <body>
-	<ul class="nav nav-tabs">
+	<ul class="nav nav-tabs justify-content-center">
 		<li class="nav-item"><a class="nav-link active"
 			th:href="@{/home}">Home</a></li>
 		<li class="nav-item"><a class="nav-link" th:href="@{/game}">試合結果</a>
@@ -46,7 +46,8 @@
 
 	<div class="container mb-4">
 		<div class="row">
-			<table class="table table-borderless col-6 offset-3">
+			<table class="table table-borderless col-6 offset-3"
+				   th:object="${result}">
 				<thead>
 					<tr>
 						<th scope="col"></th>
@@ -59,20 +60,20 @@
 					<tr>
 						<th scope="row"></th>
 						<td></td>
-						<td>〇月〇日（土）</td>
+						<td th:text="*{#dates.format(date, 'yyyy年MM月dd日(E)')}"></td>
 						<td></td>
 					</tr>
 					<tr>
 						<th scope="row">チーム</th>
-						<td>Jacob</td>
+						<td th:text="*{homeTeamName}"></td>
 						<td>vs</td>
-						<td>Thornton</td>
+						<td th:text="*{awayTeamName}"></td>
 					</tr>
 					<tr>
 						<th scope="row">スコア</th>
-						<td>1</td>
+						<td th:text="*{homeScore}"></td>
 						<td>-</td>
-						<td>0</td>
+						<td th:text="*{awayScore}"></td>
 					</tr>
 				</tbody>
 			</table>
